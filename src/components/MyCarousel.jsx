@@ -1,48 +1,40 @@
 import React, { useRef } from 'react';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
-
 const MyCarousel = () => {
   const cardMap = [
-    {number: 1, image: '../src/assets/images/card-images/Rectangle 65.svg', img: '../src/assets/images/card-images/Group 275.svg',  title: 'Мезофильная закваска Danisco CHOOZIT MM...', money: '1300₽/1 шт.', del: '1800₽', btn: 'Добавить'},
-    {number: 2, image: '../src/assets/images/card-images/Rectangle 65 (1).svg', img: '../src/assets/images/card-images/Group 275.svg', title: 'Душистый перец горошком (100г)', money: '200₽/ 1 шт.', del: '320₽', btn: 'Добавить'},
-    {number: 3, image: '../src/assets/images/card-images/Rectangle 65 (2).svg', img: '../src/assets/images/card-images/Group 275.svg', title: 'Красный перец молотый (100г).', money: '380₽/1 шт.', del: '400₽', btn: 'Добавить'},
-    {number: 4, image: '../src/assets/images/card-images/Rectangle 65 (3).svg', img: '../src/assets/images/card-images/Group 275.svg', title: 'Мускатный орех молотый (100г)', money: '420/1 шт.', del: '560₽', btn: 'Добавить'},
-    {number: 5, image: '../src/assets/images/card-images/Rectangle 65 (4).svg', img: '../src/assets/images/card-images/Group 275.svg', title: 'Форма для твердого сыра 1 кг', money: '1300₽/1 шт.', del: '1800₽', btn: 'Добавить'},
-    {number: 6, image: '../src/assets/images/card-images/Rectangle 65 (5).svg', img: '../src/assets/images/card-images/Group 275.svg', title: 'Душистый перец горошком (100г)', money: '200₽/1 шт.', del: '320₽', btn: 'Добавить'},
-    {number: 7, image: '../src/assets/images/card-images/Rectangle 65 (6).svg', img: '../src/assets/images/card-images/Group 275.svg',title: 'Красный перец молотый (100г).', money: '380₽/1 шт.', del: '400₽', btn: 'Добавить'},
-    {number: 8, image: '../src/assets/images/card-images/Rectangle 65 (7).svg', img: '../src/assets/images/card-images/Group 275.svg', title: 'Мускатный орех молотый (100г)', money: '420₽/1 шт.', del: '560₽', btn: 'Добавить'},
-    {number: 1, image: '../src/assets/images/card-images/Rectangle 65.svg', img: '../src/assets/images/card-images/Group 275.svg',  title: 'Мезофильная закваска Danisco CHOOZIT MM...', money: '1300₽/1 шт.', del: '1800₽', btn: 'Добавить'},
-    {number: 2, image: '../src/assets/images/card-images/Rectangle 65 (1).svg', img: '../src/assets/images/card-images/Group 275.svg', title: 'Душистый перец горошком (100г)', money: '200₽/ 1 шт.', del: '320₽', btn: 'Добавить'},
-    {number: 3, image: '../src/assets/images/card-images/Rectangle 65 (2).svg', img: '../src/assets/images/card-images/Group 275.svg', title: 'Красный перец молотый (100г).', money: '380₽/1 шт.', del: '400₽', btn: 'Добавить'},
-    {number: 4, image: '../src/assets/images/card-images/Rectangle 65 (3).svg', img: '../src/assets/images/card-images/Group 275.svg', title: 'Мускатный орех молотый (100г)', money: '420/1 шт.', del: '560₽', btn: 'Добавить'},
-    {number: 5, image: '../src/assets/images/card-images/Rectangle 65 (4).svg', img: '../src/assets/images/card-images/Group 275.svg', title: 'Форма для твердого сыра 1 кг', money: '1300₽/1 шт.', del: '1800₽', btn: 'Добавить'},
-    {number: 6, image: '../src/assets/images/card-images/Rectangle 65 (5).svg', img: '../src/assets/images/card-images/Group 275.svg', title: 'Душистый перец горошком (100г)', money: '200₽/1 шт.', del: '320₽', btn: 'Добавить'},
-    {number: 7, image: '../src/assets/images/card-images/Rectangle 65 (6).svg', img: '../src/assets/images/card-images/Group 275.svg',title: 'Красный перец молотый (100г).', money: '380₽/1 шт.', del: '400₽', btn: 'Добавить'},
-    {number: 8, image: '../src/assets/images/card-images/Rectangle 65 (7).svg', img: '../src/assets/images/card-images/Group 275.svg', title: 'Мускатный орех молотый (100г)', money: '420₽/1 шт.', del: '560₽', btn: 'Добавить'},
+    {number: 1, image: 'https://images.unsplash.com/photo-1603122612817-2fe0e0631a93?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', img: '/images/card-images/Group 275.svg',  title: 'Danisco CHOOZIT MM Mesophilic Culture...', money: '1300/- pc.', del: '1800', btn: 'Add'},
+    {number: 2, image: 'https://images.unsplash.com/photo-1708746333908-3bd1463b85e6?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', img: '/images/card-images/Group 275.svg', title: 'Allspice Berries (100g)', money: '200/- pc.', del: '320', btn: 'Add'},
+    {number: 3, image: 'https://images.unsplash.com/photo-1490026220125-b42f3d66abd6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', img: '/images/card-images/Group 275.svg', title: 'Ground Red Pepper (100g)', money: '380/- pc.', del: '400', btn: 'Add'},
+    {number: 4, image: 'https://plus.unsplash.com/premium_photo-1725878604678-68e06c0387f2?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', title: 'Ground Nutmeg (100g)', money: '420/- pc.', del: '560', btn: 'Add'},
+    {number: 5, image: 'https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', img: '/images/card-images/Group 275.svg', title: 'Hard Cheese Mold 1 kg', money: '1300/- pc.', del: '1800', btn: 'Add'},
+    {number: 6, image: 'https://images.unsplash.com/photo-1566373104181-133b57c9fd98?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', img: '/images/card-images/Group 275.svg', title: 'Allspice Berries (100g)', money: '200/- pc.', del: '320', btn: 'Add'},
+    {number: 7, image: 'https://images.unsplash.com/photo-1484216287461-d8f62bc4d22a?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', img: '/images/card-images/Group 275.svg',title: 'Ground Red Pepper (100g)', money: '380/- pc.', del: '400', btn: 'Add'},
+    {number: 8, image: 'https://images.unsplash.com/photo-1504394448285-7adeab975d7d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', img: '/images/card-images/Group 275.svg', title: 'Ground Nutmeg (100g)', money: '420/- pc.', del: '560', btn: 'Add'},
   ];
 
-  const prosmotrCardesRef = useRef(null);
+  const viewedProductsRef = useRef(null);
   const scrollLeft = () => {
-      if (prosmotrCardesRef.current) {
-          prosmotrCardesRef.current.scrollLeft -= 200;
-      }
+    if (viewedProductsRef.current) {
+      viewedProductsRef.current.scrollLeft -= 200;
+    }
   };
   const scrollRight = () => {
-      if (prosmotrCardesRef.current) {
-          prosmotrCardesRef.current.scrollLeft += 200;
-      }
+    if (viewedProductsRef.current) {
+      viewedProductsRef.current.scrollLeft += 200;
+    }
   };
+
   return (
     <>
       <div className='flex flex-wrap justify-between items-center py-8'>
-        <p className='text-[24px] font-semibold text-[#4E2D2D]'>Просмотренные товары</p>
+        <p className='text-[24px] font-semibold text-[#4E2D2D]'>Viewed Products</p>
         <div className='flex gap-8'>
           <IoIosArrowBack id="chevronLeft" onClick={scrollLeft}/>
           <IoIosArrowForward id="chevronRight" onClick={scrollRight}/>
         </div>
       </div>
-      <div className='flex gap-5 overflow-hidden' id="prosmotr_cardes" ref={prosmotrCardesRef} >
+      <div className='flex gap-5 overflow-hidden' id="viewed_products" ref={viewedProductsRef} >
         {cardMap.map((item, index) => (
           <div key={index} >
             <div className="w-[220px] bg-white border border-gray-200 rounded-lg shadow ">
@@ -71,4 +63,4 @@ const MyCarousel = () => {
   );
 }
 
-export default MyCarousel
+export default MyCarousel;
